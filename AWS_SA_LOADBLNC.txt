@@ -1,0 +1,87 @@
+#### load balancing ?
+\
+load blanace forward internet traffic to multiple servers ec2 instances downstream
+
+internet- load blanacer - ec-1,ec-2,ec-3 distrubled traffic..
+Single point of access DNS to your application 
+seamlessly handle failures of downstream instances
+do regular health checks to your instances 
+provide SSL terminations HTTPS for your websites 
+enforece stickiness with cookies 
+HA across zones 
+separate public traffic from private traffic
+
+why to use an ec2 load balancer ?/
+
+ELB - elastic load balancer is a manged load balancer 
+--- guarantes that it will be workig 
+--- takes care of upgrades maintenace ,HA 
+few configurations knobs 
+costs setup load balancer it will be a lot more effort to create our own , so we tend to use ELB 
+integrated with many AWS ofering / Services 
+\\\\\
+ 3 kind load balancer 
+
+ classic load balancer -20089
+ application load blr - 2016
+ network LB - v2 new generation 2017
+ overall it is recommende to use the new /v2 genration load balancers as they provide features 
+ setup internal priate - external public 
+
+ health checks - crucial LD blrs 
+ they enable the load balance to know if instances it forwaards traffic to avalible 
+ rsponse not 200 OK , then the instance is unhealthy
+
+
+ ----- Application load balancer v2 
+ --- is layer7 
+ LB - multiple http applications across macheins ( can also target groups )
+ LB - multiple applications on the same maches( docker containers / containers )
+ lB - route / hostname in url
+ - micro/containres
+ - port mapping feature to redirect to a dynamice port 
+ - Classic load balancer 
+
+ HTTPD based traffic - external applciation loadblancer v2 -- http
+ wwww-- LB --HTTP ---target group users --
+                    target group search ec2,ec2,---healthcheck
+
+stickness can be enabled - this can be enalbed by avalible
+ALB supprots http/https / websockets portcosl
+--- application servers dont see the IP of the client directly 
+--- true ip of the client is inserted in the header of X-FORWARD-FOR 
+--- we can aslo get portX-FORWARDED-PORT)and porto (X-FORWARDED-PORTO)
+
+eg 
+        CLIENT IP -> ALB -> PRIVATE IP >- EC2 
+
+------ Network load balancer v2 
+--- layer4
+--- forward tcp traffic to instance 
+--- handle millions of request per seconds 
+--- support static / elastic IP
+--- less latency - 100 ms 
+
+NLB - mostly used for extreme performacnce and should not be the default load balancr you choose
+over all creation process is the same as the application load balancers 
+
+
+load balancer
+good to know 
+--- ALB -- http / ttps webspckat
+--- NLB -- tcp traffic 
+CLB / ALB support SSl certificoates and provide ssl termination
+ALL load blance have health check capability 
+ALB can route on based on hostname/Ip 
+ALB is great fit with ECS (Docker)
+
+--- Any CLB.ALB.NLB -static hostname , dont resolve and use underlying Ip
+--- LBS can scale but not instnatily -- cotnact aws for a warm-up
+--- NLB directly see the client Ip 
+--- 4xx errors are client induced errors 
+--- 5xx erros are applciation induced errors 
+------ load balancer errors 503 means at capacity or no registered serer/target 
+------ LB cant connect to your application check your secuirty groups ..
+
+---- ALB & NLB others are deprecated ! 
+

@@ -1,0 +1,26 @@
+EC2 is one of the fundamentals 
+
+instacled are billed by the secord t2.micro is free tire
+ssh==22 lockdown
+timeoutisses= Sg issues
+permission issues on the ssh key = run chmod 0400
+securty group can refer isntead of IP ranges , CIDR, SG 
+private and public and Elastic IP
+customize ec2 
+
+know the 4 EC2 launch modes :
+on Demand 
+reserved - year or more 
+spot instanaces - cheap and bid 
+dedciated host -linces 
+
+
+instances typoes R , C , M , I , G , T2/T3 
+AMI = pre install sofrwate on your EC2 - faster boot 
+AMi can be copuied across regisons and accounts not a global thing
+
+EC2 instacled placemnt groups
+cluster 
+spread 
+partitions 
+

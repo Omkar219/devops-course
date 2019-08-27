@@ -1,0 +1,62 @@
+EC2 ???
+
+Ec2 is one of the most popular of aws
+renting virtual server / machines Ec2
+storing data on virtual drivers - EBS 
+distrubting load across machine - ELB
+scaling the services using an auto scaling group ASG 
+
+EC2 is fundamental to understand how the cloud works 
+first virtual server using the aws console 
+
+serach for Ec2 
+--select region nearest to you.(location)
+AMI - Amazone machine image --
+distro are many slect - amazon linux 2 
+    ----- Free tire eligable 
+    ------- next configuration 
+    ------- name of instaces 11 
+    network - default 
+    subnet -- no preference -select az if neded
+    --- user subnet setting enable 
+    --- user data --
+    storage --8 GB /dev/vda/ SSD gp2 -- delete on termination 
+    add TAGS 
+    ----- name tag - my 1st instances 
+    ----- another key another value 
+    ---Security 
+    ---Fire wall -- ssh portal
+    --New security group 
+    ----my 1st group--creasted with 1s ec2 instaces
+    ----tcp-22
+    --open to the world 
+    launch --- create new pair --
+    ec2 tutorial -- download key pair 
+    --view instaces - starting -az ec2 west 3c 
+    ----- instances status - running 
+
+SSH into your EC2 instances 
+ssh port -- 22 public IP ! 
+used for remote login from local
+
+u need ipv4 public ip - (copy)
+
+u can download -- putty or other termminal to do SSH
+(download ssh-client if you dont have it)
+ssh -i ec2tutoral.pem ec2-user
+
+### 0644 unprotected private key file-- 
+
+You are getting a permission error exception when trying to SSH into your Linux Instance
+The exam expects you to know this, even if you used Windows / Putty to SSH into your instances.
+ If you're a windows user, just have a quick look at the Linux SSH lecture!
+#### change it chmod 0400 tutorial.pem which will allow you to login.
+for windows 
+3389 rdp 
+using putty - download putty from online.
+load the ec2tutroial.pem by lauching putty -- file -- load private key
+-- private key (.pem file) which you can use it later load the publick key
+username ec2-user@ip
+\\connection -- auth--- browser -- link .ppk file
+\\\\\\\
+

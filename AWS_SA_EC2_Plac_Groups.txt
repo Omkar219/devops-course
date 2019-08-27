@@ -1,0 +1,69 @@
+### PlacementGroups 
+sometimes you want control over the ec2 instance Placement stratgey
+
+stratgey can be used using placement greoups 
+
+cluster - clusters instancezss into a low latency group in a single AZ
+spread - spreads instances across underlying HW(max 7 instances per group per AZ )- critcial applications
+partitions - Spreads instances across many different partitions(RELy on diff sets of racks )within an AZ,
+scales to 100s of EC2 instances per group like (ELK,Haddoop,Cassandra,Kafka)
+
+
+pros 
+each othe giving you high performance computing and network 
+placement group clouster low latency - 10 GBPS network
+great network
+cons- rack fails , all instaces fails at the smae time 
+use case big data job that needs complet efast
+apl that needs extrmely low latency and hight netowkrthroughput
+
+
+spread --- will allocation will be on dfiferent HW --
+
+pros - can span across availbility AZ
+reduced risk is simultaneous failure
+ECU instances are on different Physical hardware
+
+cons - limited to 7 instaces per AZ per placement group 
+
+that needs max HA, each instancesmust be isolated
+--------
+
+partitions --- 
+set of racks 
+us - east 1a -- differnt partions will have number of EC2 instaces with can be of p1 , p2 , p3 - 7
+supproits upto 7 partiion per AZ
+100s of ec2 instances 
+the instaces in a partition do not share racks with the instances in the other partitions 
+a partition failure can affect manyu ec2 but wont affect other partitions 
+ec2 instaces get acces to the poartitions information as metadata
+
+
+########### hands on ############
+UI - AWS -- 
+network and securoty 
+create placement group
+name --- any name
+stratgey - clusetr ---
+
+create place group
+critical applications
+spread cluster 
+
+
+create placmt group
+my distrubled applications
+partitions
+limit-7
+
+instances --- ec2 - placement group add - which you wnated 7 will be spread out across region-AZ
+target partiions --- 
+
+cluster avalible with instacnes are high ---
+
+
+
+
+
+
+

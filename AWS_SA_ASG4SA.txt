@@ -1,0 +1,21 @@
+## recap on ASG ##
+2 az zones some are v1 v2 and v1 on another zones
+ASG default termination policy -- simplified version ---
+find most instacnes on az - so az-A 
+oldest one will be deleted from the termination
+ASG tries the balance he number of instnces across az 
+
+ASG for soltions architects 
+
+scaling cool downs -- metrics to go down... 
+terminates before the other effects takes place ...
+simple scaling policy 
+scarling specific cooldown period overrides thedefault cooldown period 
+common use for scarling specific crietr or metric policy terminates instaces Ec2 auto scarling needs 
+
+
+default cool down is 300 seconds -- you can reduce costgs by applying a scaling specific cool down period
+of 180 seconds to the scale in policy -- 
+
+application is scaling up and down multiple times eaach hour , modify auto scarling grps cool down 
+timers and the cloud watch alarm period that triggers that scale in .

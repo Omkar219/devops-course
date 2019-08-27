@@ -1,0 +1,65 @@
+## Starting AWS solution Architect || August-27-2019
+####################################################
+
+solution Architect - exciting ones on architecture !!
+developer & sysOps
+AWS - amazon web service ?
+cloud provider -- on demmand and scale easily 
+
+AWS IT resolutions with cloud ruling on infrastructure
+
+Let's create AWS sign up for free tier ~ 20 dollar much needed = 20*71
+personal account || crdnumber || phone verification || basic plan
+
+AWS budget setup ---
+
+billing and cost --- aws budget - create budeget - cost budget -> budget amount -10 over , 0.01 !
+alert can be set to actual cost ~ 100 of budget amount ~~
+~~ Create budget has been created ~~
+~ you could check on Bill ~
+
+
+AWS fundamentals -- Section 
+IAM, EC2, S3 
+
+AWS region and AZs?
+
+regions are all around the world.
+each region will have the availability zone
+with 3 azs that are isolated.
+
+AWS region concept doesn't apply for services like - IAM & S3 , which is global service.
+
+IAM = identity and access management
+    AWS security is there for Users,Groups,Roles.
+
+    Root account should never be changed (and shared)
+    users must be created with proper permissions , IAM is at the center of AWS ,
+    Polices are written in JSON - JavaScript Object Notation
+    users-physical persona
+    groups - functions&teams&contains users 
+    Roles- for AWS Resources - Machines 
+    all these are documented on JSOn 
+
+    IAM has a global view , this will be avaliable for all the region has its global
+    MFA - multi factor, Persmissions are goverend by JSON
+    minimal amount of permissions they need to perform their JOB .
+    IAM - users and roles !! don't use it on credentials 
+    ROOT account ! Root IAM credentials 
+
+############## hands on instruction ############
+find iam service 
+--> click on it 
+---->uesrs 0 , roles --> 0
+delete your access Root
+enable MFA---> google authenticator 
+add user - username - 
+promgrammtic acess , aws console access
+set permission -> attach policy --> administrator 
+Download the CSV store it safe needed for future..
+
+Create 
+Group name - admin 
+------- add user to groups
+-------- copy the console url -- pass it to user ---
+

@@ -1,0 +1,39 @@
+## understanding the scalability and HA 
+
+scalability is differnt from the HA 
+how ?
+
+meaning that an application or system can handle greater loads by adapting resources 
+there are 2 kinds namely: 
+    Veritcal scalability
+    Horizontal scalability(=elasticity)
+scalability is linked but differnt to High Availablity
+
+ Veritcal scalability -
+ to increase the sizse of the instances -- scaled into jr to Sr to get lodas 
+
+ t2.micro into .large 
+
+ is very common for non distrubited sytesm like dabase , RDS , Elastic cahce
+
+
+ Hrztl scalabiltiy 
+ number of instnaces or systems for ur 
+ ie hiring more employues of same role to tke up loads 
+
+
+----HA------------------
+
+usualy gos hand in hand with horizontal scaling 
+
+HA means running your apllication sytem in at lesat 2 data center (== AZ)
+high avaiablity is to survie a data center loss 
+
+HA  can be passive 
+
+Veritcal scaling === (=scale up / down )
+from t2.nano 0.5 G of ram , 1 vCPU
+
+Hrzizontal scaling increase number of instaces (= scale out // in )
+auto scaling group 
+load balancer multi AZ 

@@ -1,0 +1,59 @@
+### EC2 instance launch types ###
+On demand instaces : short workload, predicatable pricing 
+reserved instaces : long workloads 1 year
+
+convertiable reserved instances : long workloads with flexible instaces
+scheduled reserved instances : launch within time window you reserve 
+spot instacnes: short workloads, for cheap,can lose instacnes 
+dedicated instances: no othe customers will share your hw
+dedicated hosts: book entire physicalserver, control instances 
+
+
+---- On demand instaces
+pay4wat u use (billing persecond after the 1st min)
+has the highest cost but no upfront payment
+no long term commitemnt 
+
+recomended to use it for short term and un-interuptd workloads where
+you cant predict how the application will behave.
+\\
+
+Ec2 reserved instaced 
+755 lond discount 
+
+reservation 1 or 3 years 
+
+recomended for steady state application
+converitable can chagne the ec2 instance type 
+
+upto for 54% discount 
+
+chedued reserverd instacced 
+
+spot instaces - 90 compared on demand
+you bit a price and get the instaces as long as its underthe price 
+price varies based on offer demand
+2 mins notifcatio
+
+not graet for critical jobs 
+
+
+ec2 dedicated hosts 
+physical dedicated ec2 serer for your usefull control of ec2 placement
+
+underlying sockets - 3 year period reservation mroe expensive 
+
+BYOl
+
+
+---- Ec2 dedicated instacned -- runing on hw dedcated to you
+share hardware with other instaced in same account 
+
+no control over instaced placement can move hardware after stop start 
+-----------------
+--- booking rooms examle 
+On demand - 
+reserved -- plan ahead 
+spot instaced - loimited capcity -- bid
+dedicated hosts -- we book floor or building or resort 
+

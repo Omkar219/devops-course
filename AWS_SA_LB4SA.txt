@@ -1,0 +1,71 @@
+#### Quick recap on load balancers ### 
+classsic load balancers - questions on security groups , stickness 
+applicaiotn lb -- osi layer 7 - routing basedonhostname --- .com
+---------- paths .. redirect 00 http to https 
+---- dynamic host port mappong with esc
+----- DNS 
+
+NLB -- layer 4 osu gets static IP per AZ :
+publick facing must attach elastic Ip can help whitelist by clietns 
+--------- elastic Ip 
+--- random pvip on facing 
+--- has corss zone balancign 
+---- SSL termination Jan 2019 
+
+LB SG 
+
+--- http tcp 80
+--- https tcp 443 https 
+applkication security group --- source - security group only load balancer talks to ec2
+
+ssl ceritficates -- encrypted over www -- lb --- http over private vps
+load balncesuses an x.509 certifcates **ssl /tls 
+ACM -- AWS cerrtifacte manger
+upload ur own cerrtificates alternatively
+--- HTTPS listener 
+ must specify a default certificates 
+ can add an optional list of certs to support ,multipel domains 
+ clients can use SNI -- server name indeication -- to specify the hostname they reach 
+ older ssl/tls - leagcy 
+
+ ################# Auto Scaling groups ##############
+
+load on your webistes and application can change 
+in the clud you can create and get rid of servers very quickly 
+
+goal of an auto scarlign group - ASG is to 
+scale out / scale in --- to match increased load and to match decreased load.
+Ensure we have a minimum and a maximum number of machines running 
+\\\\ automatically register new instaces to a LD 
+minimum-desired--madxmkin
+
+ASG with loadblancer 
+web traffic --- 
+AMI + instasnce type 
+ec2 user data 
+ebs vlolumes
+security groupsssh key
+min max / inital
+netoowk + subnest
+load balancer infomration
+scaling polices 
+
+Auto scalring arlames 
+--- using cloud watch alarms --- triggers EC2 
+New rule --- better auto scarling target average CPU 
+ELB reqest . netwk in and out .
+easier to setup and can make more sense 
+
+custom metric -- send custom emter ec2 to cloudwatch using applicaiotn\
+create cloud watch alarm to react to  low / high values 
+create cloud watch alarm as the scarling policy for ASG 
+
+
+braind dump
+CPU , network schedule
+launch confg
+IAM roles atttached to an asg  to ec2 instace
+ASG is free -- underlyingresources being launched 
+
+ASG means that if they get terminated for wtter ASG will restart tehem ..
+ASG will terminate instances marked as unhealthy by an LB -- Hence replace scale

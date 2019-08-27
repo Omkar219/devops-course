@@ -1,0 +1,36 @@
+## handson creating AMI 
+
+sudo su 
+yum update -y
+yum install httpd
+systemctl start httpd
+systemctl enable httpd
+echo "hewld" > /var/www/html/index.html
+
+security group add the http & ssh to make sure its avaliable over there.
+
+click on instances -- create -ami - right click - create image - image descrionte & image name 
+device the root value -- click on it create another instances -> copy to differnt region AMI - modify AMI permissions 
+
+ready and launch --- second instances with copy new publick ip
+########### cross account AMI ###############
+
+you can share an ami with another aws account 
+sharing doesnt affect ownership
+if you copy an ami --
+to copy an ami that was sahred with you from another account , the owner of the source ami must grant perimission.
+for an amazon EBS -backed AMI or an assocaited s3 bucked -- for an instance store backed-AMI 
+Limits :
+
+\
+\\\\ cant copy encrypted AMI that was shared to you from another account ! 
+instead if the snapshot and encryption key were shared with you , you can copy the snapshto while -reencryotung it with a key 
+of your own , you own the copied snapshot and can register it as a new ami
+\\\ cant copy with billing product code hat was shred with you . includes Windows AMI and AWS market Place . shared Ami.
+ec2 instances in ur account using the shared ami and then create an ami from the instance 
+
+
+\\\ work \ hands on
+right click on instances running with AMI | or AMIs 
+modify the image permissions-- AWS account member -- shared it with another accounts 
+-------------launch

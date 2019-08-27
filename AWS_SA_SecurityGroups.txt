@@ -1,0 +1,60 @@
+### 
+
+security groups for ec2 
+wwww - inbooundtraffic/outbound - security group -
+firewall
+inbound rules can be added 
+create scurity group actions 
+inbound anywhere 0.0.0.0/0
+
+
+ipv4 and ipv6
+access to ports
+control of in and out bounds 
+
+
+can be attached to multiple instances 
+locked down to a region /VPC combination 
+
+does live "outside" the ec2 , if traffic is blocked the ec2 instaces won't see it 
+
+one separate group for ssh accessis not accessible time out -- security group error
+
+connection refused error -- application or its not lanched due to sg
+All inbound traffic is blocked by default 
+all outbout traffic is authroised by default 
+
+refernce other security groups 
+
+authorizing sg1 sg2 from the other sg1,sg2 needed for load balancers 
+
+
+Private vs Public (ipv4)
+
+ipv4 - 4 quot , 3.7 billion
+ipv6 - iot 
+
+
+private - priavte range rae limited but not exposed - gateway using 
+you need gateway -- wwww
+2 compaines can have same ips --
+
+elastic IP !! 
+when you stop and thn start an ec2 , it can change its Public
+you can have fixed IP ! which is elasticIP
+elastic is public ipv4 , you own as long as you wont delete .
+in ur account with 5 elastic IP
+try to avoid using elastic ips
+random publick ip  register a dns name to it .
+
+ssh into machines - publick ip and priavete.
+
+if machine starts and stops public ip will change.
+
+under the bottom left you will find elastic ip section
+click on it , and allocate - you can allocate that elastic ip to ec2 instance \
+right click asscociate t oa instances 
+
+(ip will be there even with elastic ip address )
+
+Security groups cannot refernce to DNS name 

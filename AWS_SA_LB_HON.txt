@@ -1,0 +1,40 @@
+### load balancer hands on ####
+
+
+click on load balancer --
+
+application and Netowrk lb 
+
+http -- aplication -- name it - web application
+ipv4 
+listerns --- http 80
+az -- 3 az 
+security groups --
+new sg -> 1st ALB any connection 00000/0 tcp 80 routing -- new target group 
+http instaces can be accessible - health check 
+creating load balancer -- -
+
+provisioned -- works ! 
+DNS name used in ALB 
+uses 3 AZ --- listers chcek ALB 
+create rule to forward it to target group 
+
+
+
+adding instaces to the current load balancer -- create new ami - micro -- 2 instaces -- advance user data 
+----------------- add SG -- add it to PEM .
+edit and added the instaces with using LB ---
+
+------------------
+Stickeness loadbalancer 
+implemetn stickiness so same client to same loadbalancer
+this works classic lb and application lb 
+cookie used for stickiness has an expiration data 
+
+make sure the user doesn't lose his session data. 
+enabling stickness may bring imbalance to the load over the backend EC2 instances
+due to stickness it could increase cpu usage --- 
+target groups -- edit attriubutes enable givee time  with session 60 seconds stickensss 
+cons: imbalance 
+------------
+

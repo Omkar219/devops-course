@@ -1,0 +1,38 @@
+### Amazon machine images 
+
+aws base images
+ubuntu
+fedor 
+widnows
+
+ec2 user data
+
+custom ami
+pre-installed packegs neded 
+faster boot time 
+monitoring / enterpirse software 
+security concerns - control over the mache in the network 
+control of maintenace and updates of ami over time 
+AD out of the box 
+installing your app ahead of time - faster deploys when auto scaling
+
+ami that is optimised for running an app , db , etc 
+AMI are built for a specific aws region
+
+
+PUBLIC AMI- rent for by the hour these ppl have optimise dthe software 
+rent expertise from AMI 
+AMI comes with alert and care be alet using other ppl AMI
+\\
+AMI Storage -- ami take space and they live in amazon s3 
+s3 is cheap , durable , resilient storage where the most of your backups live 
+by default, AMIs are private and lcoked for yorui accoutn and region 
+you can also make your AMIs publoick and share them with other aws 
+accounts or sell them on the ami market place 
+
+
+AMI live in amazon s3 so you get charged for the actual space in takes in amazon S3 
+Creating an AMI after installing the applications allows you to start more EC2 instances directly from that AMI, 
+hence bypassing the need to install the application (as it's already installed)3
+Your application takes about 30 minutes to install,
+ which is the fastest way to reliably start it multiple times with minimum install time?

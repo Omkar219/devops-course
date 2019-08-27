@@ -1,0 +1,39 @@
+##### ASG hands on ### 
+left hand navigator we fing load balancing menu 
+
+auto scarling ---
+create auto scalign group ---
+
+launch template ---> AMI --> free tire --> t2,.createn
+name - launch-config
+iam role 
+
+advanced -- user data - apache servers -
+volume -existnt securoty group -- access to port 80 and 443 
+create pem. 
+
+create - ASG 
+group name- asg 
+grop size - 1 instance 
+network 
+submet --- selected 
+
+adnaved load balcing 
+
+target groups -- apache grtoup --- 
+Health check - ELB
+interval - 50 seconds 
+--- nexxt 
+keep this group at initaisize 
+
+scalblke btwn 1 and 3 
+
+CPU 40 instances average CPU ultization..
+review - and create ASG 
+
+
+activity history -- sucessful -- created healty 
+--instacne tab to check --- created by ASG 
+target group --- we have 2 instances 
+---edit and instances will create another by 2 , increasing 2 instance created.
+

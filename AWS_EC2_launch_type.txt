@@ -1,0 +1,29 @@
+### purchase reserved instances 
+
+purchase reserved insatces -- 3200 usd  = 12 months 
+sechudle when you need and start and stop 
+spot request - big saving using bid with prfrence 
+
+--ternancy --- dedicated run shared hardware instances 
+\\EC2 instance types - main ones
+
+\\\ R - needs lot of ram - in memory - cache
+\\\ C - needs lot of CPU - compute / database 
+\\\ M - needs applciation that are balanced ( think medium) - general / web applciation
+\\\ I - I/O instances instance storage 
+\\\ G - GPU used for ML \ vide rende
+\\\ T2-T3 - burstable intanace upto capacity
+\\\ T2-T3 - unlimited instanjce 
+
+check the link below to find out 
+EC2instances.info 
+
+
+Bustable instaces -t2/t3 providing cpu allocation under the spike conditions 
+--- OK CPU performance !!
+--- it will utilize burst credit 
+--- CPU becomes bad 
+--- machines stop bursting credits are accumulated over time 
+--- credit usage - credit balance you can monitor it 
+--- t2/t3 unlimited --- pay extra money -- new oferring , costs could go high
+

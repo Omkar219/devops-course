@@ -1,0 +1,45 @@
+## installing an apache web server to display webpage 
+we'll create an index.html thaat shows the hostname of our machine
+
+
+publick ip - shows
+>>sudo sudo
+>>yum update -y
+>>installing httpd
+>> yum install -y httpd.
+>>systemctl start httpd.service
+>>systemctl enable httpd.service
+curl local
+copy ip 
+open local browser ---> time out ! security group
+
+user inbound installation
+security group - add rule - http by default just add 00000/0 alllow traffic -port 80
+>>
+echo "helloword" >> /var/www/html/index.html
+
+hostname -f 
+
+####### EC2 User data ###'
+
+bootstrap using an ec2 user data script 
+
+bootstrapping -- boot task automate 
+--installing updates -- installing software -- downloading common files from the intrent
+---test
+--- apache http server installed on it to display a simple page..
+--terminate existing instances
+-- create new on ami2 gp free tire 
+--- advanced option
+----- user data as text 
+ec2 runs automatically on sudo mode 
+---- #!/bin/bash 
+--->>installing httpd
+    >> yum install -y httpd.
+    >>systemctl start httpd.service
+    >>systemctl enable httpd.service 
+
+even if you terminate instances security group will be exiting 
+keypair.. ec2 tutorial 
+
+you can provide startup instructions on ec2 userdata under advance settings 
