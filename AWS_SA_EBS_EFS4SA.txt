@@ -1,0 +1,14 @@
+### 
+EBS volume can be attached to only one instance at time 
+locked and can be moved only by snapshot via 
+recreating it into differnt AZ 
+## EBS backups use IO and you shouldn't run them while at peak traffic
+root EBS volume of instaces get terminated by default if the ec2 instances are terminated.(BUT CAN BE DISABLED)
+
+
+\\DISK IO is high => increase EBS volume size(forGp2)
+\\EFS mounting 100s of instances
+\\EFS share website files 
+\\ EBS gp2 , optimize on cost 
+\\Custom AMi for faster deploy on ASG 
+\\ EFS vs EBS vs Instance store 

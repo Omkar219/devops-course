@@ -1,0 +1,97 @@
+## RDS -- 
+RDS -- Relational Database serive
+managed DB service for DB user SQL as a Query language 
+create db in the cloud that are managed by aws
+potsgres,oracle,mysql,mariaDB,SQLserver,Aurora - AWS -proprity db
+
+managedsericve,os patching level, conin.. bkup and restore timestap, monitoring dashboard 
+read replicas for improved read performance,
+multi AZ stup for DR , maintenance windows for upgrades 
+scaling capability 
+--- you cant ssh into your instances !! 
+
+how it works ?
+Read replicas for read scalability
+    upto 5 read replicas within AZ , cross AZ or Cross Region!
+    replication is ASYNC so reads are eventually cosistent 
+    replicas can be promoted to their own DB 
+\\  applications must be updated the connection string to leverage read replicas !! 
+    applications -- RDS instance read replica (R)- aysnc replications -rds db (W.R) --- a sync replicationsRDS (R)
+
+
+RDS multie instances -- multi AZ - Disaser recovery -- for different AZ !
+SYNC replication -- standyby mode -- 
+one dns name automatic app failover to standby in case of failover ! 
+failover in case of loss of AZ loss of network instance or storage failure
+no manual intervention in apps ! 
+
+
+
+RDS backup -- automated backups enabeld in RDS 
+
+automated backups ! 
+daily full snapshot of the Database capture transtin logs in real time 
+-> abilty to restore to any point in time -- 7 days retention ! to 35 days 
+
+DB snapshots -- mauntal trigerd by the uer retenion of backup for as long as u wan t 
+
+RDS encryption ! 
+-- rest capabilty with AWS KMS -AES 256 encryptionSSL certion
+to enfore SSL encrypt data 
+postgreSQL : rds.force_ssl=1
+MYsQL withind backup
+grad usage on to Require SSL
+to connect using SSl -- Trust certificate - download AWS 
+SSL options when connecting to DB \\\\
+
+RDS security !
+rDS db are usually deployued within a private subnet not in a public one
+RDS security works by lvrgin security groups !! it controls who can communicate with RDS 
+IAM polices help
+
+
+### HANDson ## 
+RDS -> aurora -- mysql compatirable -- free tire mysql ! postgreSQl !! free uasage ! 
+GPL model instnace as storage 
+storage type -- allocated storage 20 GIB , DB instance identr - my1stsql
+masterussrn -- 
+masterpassword - 
+configure adacne -default VPC 
+default subet groupsp
+public access -- yes or no 
+
+avaliabklity zone 
+VPC create new VPC SG 
+
+DBname  mydb 
+3306 mysql promoted
+IAM DB authemn -disbale
+Encryyption -- KMS console tool will be encryption !1
+backup enabled my degfault - 35 days ! 
+
+monitoring -- disable 
+logs export !! 
+
+maintanec - enable auto minor version upgrade --
+miantwido !! 
+
+
+DB created !! 
+my1stSQl 
+
+
+SLELECTRON -- download GUI !!  
+myrds dabat base serer 3307 -- connect !! endpoint -url -port 
+
+
+-----------RDS security for sysops
+Encryption at rest -- done onl when you 1st create the DB instance -- EBS volumes -snapshot --snapshot encrypted - create DB 
+
+check ports/iop / SG inbound rules in DB Sg 
+in databse user creation and permissions
+creating a databse with or without public accessensure paramter groups or DB is confgured to only allow sssl conections
+AWS responsbility ---- no ssh,no db pactching,no os pacthcing ,no way to autid the underlying instances !! 
+RDS is a managed system !! 
+
+
+

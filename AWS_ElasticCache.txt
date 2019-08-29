@@ -1,0 +1,68 @@
+ELASTIC CACHE ! 
+
+same way RDS is only get managed RelationalDB
+cahce is to get mmgnmd redis or memcached
+helps reduce load off of db for read in
+statless,scaling using sharding, read scling using read replicas,
+
+multi az with failover capb,
+aws tcs of os , patching, setup,confuigi,, monitroing, failure, recovery and backups ! 
+DB cache using applications queries elastic caching , if not avalible get from RDS - store in Elastic Cache !
+
+cache hit -- elastic cache -
+cache miss - application  Amzn RDS !
+\
+\\\\
+
+application ----> ealstic cahce --> RDS 
+
+user session store ! -uesr logs -- applicaion wirtes session data into ealasticache -- user hits another instance of our application ! 
+instance retrives the user is already logged in r--shared some stateless 
+Redis or memcached
+
+REDIS #######
+redis in a memory key value store,low latency sub ms 
+cache survie reboots by default ! 
+great to host -- user sessions leaderboard,distrubuted states , relieve pressure on DB ,
+pub-sub capcit for messaging ! 
+multi Az wiht automatic failover for disaster recovery if you dont want to lose ur cache data 
+
+
+Memcached ############
+is a memory object stored 
+Quick retrival of objectfrom memory 
+
+redis largely grown ! 
+redis memcached = elastic cache ! 
+
+
+hands on elastic cache #### 
+elastic cache == 
+cluster engine -- redis - clouster mode enabled !! AZ / auto failover 
+
+
+redis settings myredis
+engine verison
+port 6379 !! 
+cahce to micro ! 
+read replicas = none !! number of replica = 0 
+subnetgrup new 
+create new 
+my-redis-subnet-group
+myredis subet 
+eu west 3a 
+security default --
+at rest | trasit | 
+backup automated back / maintenace || 
+
+security - redis AUTh (username password)
+SSL in fligh
+memcache supported sasl authentical 0- advanced 
+none of the cache support IAM authentications nooooooooooo
+
+iam polices elasticache are only sued for aws api level --
+pattern cache 
+
+lazy loading -- read data is cached , data can become stale in cache 
+write thoug - adds or update data in the cache when written to a data (nostale data)
+sessoin store - store temporary sesson data in a cahce -- using TTL feature 

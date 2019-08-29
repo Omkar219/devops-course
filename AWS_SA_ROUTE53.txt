@@ -1,0 +1,97 @@
+Route53 DNS 
+
+DNS -domain name system
+dns is collectkion of rules and records which will helps client to udnerstnad how to reach to a server through urls ! 
+
+in AWS most commonly used 
+A: url to ipv4
+AAAA: URL to ipv6
+Cname: url to URL
+alias : url to aws resources 
+
+route53 can use 
+public domain names you own or buy 
+
+private domain names the can be resolved by ur instance in ur vpc 
+
+route 53 has advanced features such as loadbalancing 
+health checks
+routing policy : simple - failover : geolocation ; latency ; weighted ; multi value 
+
+0.53 dollar per month !! 
+
+handson
+
+hostendchedck ! 
+registed domain 
+restrain constargins purchase the domain name ! 
+pending requests 
+hosted zoned -- create recoreds ! 
+my1strecord valule dns record  serivce nothing ! 
+
+nslookup / dig ! 
+
+EC2 + route53 ! public easy pizzy 
+
+TTL + ec2 time to live 
+
+webbrowser -- DNS -- route 53 -- sendback with TTL 300 s || cache with dns !! 
+this nothing but caching of the record ! TTL to expire 
+highTTL -24horus less traffic DNS | outdated records
+lowTTL - 60s more traffic on DNS recorsds are outdate for less time ! 
+TTL - manadatory 
+
+
+### CNAME VS alias !! 
+
+aws resources (lb,clod) AWS URL - you want it to be myapp.mydomin
+CNAME - points to url - url ! 
+only for nonrootdomain = aka.smtgn.mydomain.com 
+alias = URL TO AWS 
+works for both root domain and non root dmoain - aka.mydomain.com 
+Free of charge 
+natvie healthcheck 
+
+###### recommend using on ALias type !!! 
+
+--------- Simple routing policy
+maps a domain to one URL 
+A record ! when use need to redirect o asinlge resouce 
+u cant attach health check to smile routng policy 
+you can add muiltiple values are returened ! 
+
+
+--- weighted routing policy 
+
+control the percentage of requests that go to specific endpoint 
+weight 70:20:10 loads to 70 to ec2 , 20 to ec2 , 10 t o ec2
+helpful to test 1 of traffic on new app version of example 
+helpful to spirital 
+routing polcy weighted !! 70 weight ! 
+setID US - create !! 
+
+---- latency routing polcy 
+
+redrict to the server that has the least latency close to us 
+
+user to aws region with leaste latency will be assinged to the user ! 
+
+Healthcheck ----
+
+unhealthy default 3 
+
+after pass health 3 
+30s ( can set to 10s interval check )'15 health checkers 
+https ,tcp , https --- no ssl verficaiton
+
+health checks can be linked route53 DNS with cloud watch 
+Endpoint 
+IP address domain name ! 
+standard and fast health check || therhosuld to define -- latency grapg !1 
+
+failover - routing policy -- 
+primary and secondary failover part ! 
+
+geolocation --- default poklic y no match is found !! 
+routing based on user location ! 
+

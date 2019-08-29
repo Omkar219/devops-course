@@ -1,0 +1,51 @@
+Aurora - AWS 
+properity tech fro mAWS 0-no open  source
+
+postgtre and mysql are boht supported as aurora DB -- drivers will work as if aurora was a postrgre or msql 
+
+"aws cloud optimised" 5x performace over mysql rds , 3 x over postgre 
+
+auror storage automatically gros in increments of 10gb to 64 TB 
+
+can have 15 replicas , mysql has 5 -- faster than 10 ms 
+failover in auror in instnace its HA native
+
+
+
+Aurora HA and Read scaling 
+6 copies of your data acrsos 3 AZ
+4 copies out of 6 needed for writes 
+3 copuies out of 6 need for reads
+self healing pertoper replciations 
+storage is striped across 100s of voluumes 
+
+instakes wtakes writes (master)
+automated failover for master in less than 30 seconds
+master is only 1 
+and upto 15 aurora read repklicas rserver reads ,
+supports cross regions ! 
+
+aurora DB cluster ! 
+Shared storage volumes 
+writer endpoint -- pointing to the master ! -= MASTEr 
+
+autoscaling of 1 to 15 replicaes on the read ! 
+reader endping with connection load bakancing !  
+connection level --- 
+
+feature -- failover , BR , isolation , industry comparing
+pushbotton scaling,
+auto matchin g wiht zero downtine
+advanced monitoring
+routine maintenance 
+backstrrack - restore data at any point of time without using backups ! 
+
+Auroar securityu - encrypiton at rest using KMs 
+
+automated backups snapshots and replicas are also encrpyuted 
+SSL , using IAM , for protecting the instance with security groups ! can;t SSH !!!
+
+Aurora serverless 
+no need to choose an instance size ! only supports mysql 5.6 postgree
+helpful when you cant predict the workload 
+DB sluster starts , shutdown scales automaticlly based on cpu / connectioncan migrate from aurora cluster to auror 

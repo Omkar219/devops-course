@@ -1,0 +1,58 @@
+### EBS snapshot
+
+incremental - only backup changed blocks 
+EBS backup use IO and you shouldn't run them while your application is handling a lot of traffic 
+snapshot stored in s3 !! (wot see them)
+max 100,000 snashop copy accross az or geion.
+can make image - ami from snapshot 
+EBS volume s restored by snapshots need to be pre-warmed -- using fio or dd command to read the entire volume.
+snapshots can be automated using Amazon Data Lifecyle Manager 
+
+
+EBS -- Data lifeCycle manager -- create time schedular for taking out snapshots ! 
+automated backup options --- sysOPS ! 
+
+EBS migration -- 
+EBS volumes are only locked to a specific az
+to migrate to differnet on AZ
+snapshot the volume -> copy the volume move it to differnt region -> create volume from the snapshot inthe AZ of your choice ! 
+
+EBS encryption runs on KMS - AES-256 enabling encryption ! 
+
+HON ---
+usin copy !! -- copy and encrypt -- region -- master key ! 
+kms key id == create a volume from -- it will be encrypted ! 
+
+
+######### important ##### 
+EBS VS instance store ! 
+some instance do not come with root EBS volumes 
+! 
+instead , they come with instance store == ephermeral storage ! 
+
+instance store is phyiscally attache d to the machine - EBS is a netowrk drive 
+
+PROS --- IO / cahce/ data / tempory content / data surive reboot /
+cons -- on stop termination - instance store is lost ! you cant resize the instance store ! backups must be operated by the user.
+
+
+EBS - RAID configuration !! 
+RAID LOL ! 
+EBS redundant storage !
+increase IOPS - 100 000 IOPs 
+
+RAID is possible as long as your spports it ! 
+RAID - 0 , 1 --- not using 5 and  6 
+Riad 0 increase perfromance 
+ec2 - one logical volume - ebs v1 ebs v2 ! 
+combining2 or more volumes getting the total disk spcace and IObut one disk fails all the data is failed !!!
+risking more , use case would be --doesn't need fault -tolerance ! databse that has replication already built in 
+
+ex-- 500 GIb amazon bs IO 1 volumes with 40000 ,createa 1000 Gb raid 0 array with bandwith of 8000IOPS with 1,000MBS throughput
+---------
+
+############## RAID 1 
+RAID 1  = mirroring a volume to another  !! 
+if one disk fails our logical volume is still wroking !! 
+we have to send the datga to two EBS volume at sme time (2x Network)
+

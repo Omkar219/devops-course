@@ -1,0 +1,62 @@
+## EBS volume ???
+EC2 root volume ( main volume ) will its volume when its terminated manually 
+
+way to store instance data can be stored in EBS - block store 
+its network drive drive --- detached from an ec2 instance and attached to another one quickly
+
+Its loaded to an AZ
+FOR EXample EBS can be attched to south-india-1 to atcched to south-india-2
+To move the volume across make sure that you take a snapshot for safer side and best practices,
+provisioned capacity size in GBs and IOPS can be billed for all the provisioned capacity.
+(if you use one gb among 1 TB , you still will be billed on 1tb not on 1gb)
+
+there are 4 types of EBS volumes:
+
+GP2 - SSD - gnrl purpose ssd - balances price & performance for a wide variety of workloads 
+IOI - SSD - highest performance for missions crictical low latency / high workloads
+STI - HDD - low cost - frequently used - high or more workloads
+SCI - HDD - low cost - less frequently used accessed by workloads 
+
+
+EBS characters = size | throughput | IOPS ( i/o ops per sec)
+only GP2 and IOI used for booting volumes ! becz they're faster in loading ! 
+
+############ hands on ####################
+
+Ec2 
+
+create new instances - ami - loinux 2 --- default next - 
+STORAGE --->> 8 gp2 volume ssd2 -- delete on termiantion 
+EBS --->> /dev/sdb/--- 2 SSD gp2 -- not encrypt -- don't delete on termination.
+name --- ebs demo -- secuirgy gorup -- ssh 22 keypair- tutorial.pem 
+
+block device -- /dev/sdb//
+volumes --- EBSdemo -- 2 Gb they have same on AZs 
+ssh into it 
+inside linux terminal -- lsblk
+
+use formating for sdb file going through mk2fs commands 
+
+@#######################
+
+type use cases 
+
+GP2???
+used for development, low ltncy, bootvolumes,
+1gig -16TB, small gp2 volumes can burst IOPS to 3000, max 16,000
+3 IOPS per GB means at 5443 GB we are at the max IOPS 
+3IOPS = 1 Gb 
+
+## IO1 ???
+
+IOPS perfromace , more than 16000 IOPS per volume gp2 limit
+large DBs , workloads - like SQL server , MongoDB , Cassandra , PostgreSQL , Oracle .
+4gb-16TB , IOPS - min 100 and max 64,000 -- else max 32,000 for ohter instances 
+maximum ratio of provisioned IOPS to requested volume size(in GiB) is 50:1 
+
+### st1 ?
+
+fast througput at low price - big data , data warehouses ,;log , apache kafka
+500Gib -16 TB , maxIOPs is  500, Max throughput of 500mibs can burst 
+
+### SC1 -- lowedst storaget cost -- 250 can burst -- cheaper and best for low budget ! 

@@ -34,3 +34,5 @@ ec2 instances in ur account using the shared ami and then create an ami from the
 right click on instances running with AMI | or AMIs 
 modify the image permissions-- AWS account member -- shared it with another accounts 
 -------------launch
+
+######### next ----

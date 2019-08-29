@@ -1,0 +1,44 @@
+EFS - Elastic file system ! used for EC2 instances 
+
+managed NFS - network file system that can be mounted on many ec2 
+EFS works with Ec2 instance in multi aZ 
+HA , scalable , expensive (3xgp2)
+
+webserving , wordpress,
+NFSv4.1 protoc. SG to control acces to EFS 
+linx based MAI - Widnows
+
+performance mode--- GP(default) max IO - used when thousands of EC2 are using the EFS 
+EFS file sync to sync from on premise file system to EFS !
+backup EFS to EFS -- incremental can choose frequency ! 
+encryption at rest using KMS !!!!!!!!
+
+EFS - HANDSon 
+create security Groups ! --- SG to EFS ! 
+inbound no rules -- outbound all rules !
+
+create file sytel - configure file system access !!
+we have 3 AZ avalible on all other ! assign Sg -- EFSdmo secuiry grup
+created on their IP and subnet addres ! 
+
+efsdemo
+general purpose 
+maxio
+bursting 
+provisoed 
+enable encryption 
+with KMS 
+review and create - and store -- there will be creating stage -- file system ID copy , mem sized ! 
+
+
+HON---
+
+create EFs file system copy the system id ! and create new ec2 instance - edit and launch give them EFS SG groups created rencetly
+so it could be accessed ! 
+SSH to server - instal yum amazon efs utils and mount it by using systemid 
+
+inbount rule to EC2 instance -- create security group 
++ NFS tcp - with port 2049 ,, source will be ec2 to efs Security gorup for all the ports ! (EC2 will be allowed )
+
+
+
