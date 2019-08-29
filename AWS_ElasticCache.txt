@@ -66,3 +66,6 @@ pattern cache
 lazy loading -- read data is cached , data can become stale in cache 
 write thoug - adds or update data in the cache when written to a data (nostale data)
 sessoin store - store temporary sesson data in a cahce -- using TTL feature 
+
+
+##############################
